@@ -25,10 +25,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build Umbraco_Onatrix/Umbraco_Onatrix.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ./publish
+        run: dotnet publish Umbraco_Onatrix/Umbraco_Onatrix.csproj -c Release -o ./publish
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -55,5 +55,6 @@ jobs:
           slot-name: 'Production'
           package: ./publish
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+
 
 
