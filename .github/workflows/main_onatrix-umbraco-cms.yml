@@ -21,7 +21,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.x'
+          dotnet-version: '8.x'
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -38,7 +38,7 @@ jobs:
   deploy:
     runs-on: windows-latest
     needs: build
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -51,5 +51,6 @@ jobs:
         with:
           app-name: 'Onatrix-Umbraco-CMS'
           slot-name: 'Production'
-          package: ./  # This folder contains the publish output
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2464AF5EDC41412092EC1AF6308FB439 }}
+          package: ./publish
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+
