@@ -1,0 +1,167 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var tinaFoxImage = Model?.Value<IPublishedContent>("aboutUsImage");
+
+	var reviewImage = Model?.Value<IPublishedContent>("reviewImage");
+
+    var teamImage1 = Model?.Value<IPublishedContent>("teamCard1Image");
+    var teamImage2 = Model?.Value<IPublishedContent>("teamCard2Image");
+    var teamImage3 = Model?.Value<IPublishedContent>("teamCard3Image");
+    var teamImage4 = Model?.Value<IPublishedContent>("teamCard4Image");
+    var teamImage5 = Model?.Value<IPublishedContent>("teamCard5Image");
+    var teamImage6 = Model?.Value<IPublishedContent>("teamCard6Image");
+    var teamImage7 = Model?.Value<IPublishedContent>("teamCard7Image");
+
+    var teamImageFront = Model?.Value<IPublishedContent>("nextProjectImage");
+    var teamImageBehind = Model?.Value<IPublishedContent>("nextProjectImageBehind");
+}
+
+<section class="tab-location">
+	<div class="container text-center">
+		<h1 class="standard-heading">@Model.Value("tabLocationTitle")</h1>
+		<div class="flex">
+			<p class="standard-text">@Model.Value("tabLocationHeadline1")</p>
+			<i class="fa-solid fa-angle-right"></i>
+			<p class="label-title">@Model.Value("tabLocationHeadline2")</p>
+		</div>
+	</div>
+</section>
+
+ <section class="company-info">
+	<div class="container">
+		<div class="info-grid">
+			<div class="info-left">
+				<img src="@tinaFoxImage?.Url()" alt="@Model.Value("aboutUsImageText")">
+				<p class="standard-text text-m">@Model.Value("aboutUsImageText")</p>
+			</div>
+			<div class="info-right">
+				<p class="standard-text text-xl">@Model.Value("aboutUsQuote")</p>
+				<div class="standard-text text-s">
+                    <p>@Model.Value("aboutUsText1")</p>
+                    <p>@Model.Value("aboutUsText2")</p>
+                    <p>@Model.Value("aboutUsText3")</p>
+                    <p>@Model.Value("aboutUsText4")</p>
+                    <p>@Model.Value("aboutUsText5")</p>
+                    <p>@Model.Value("aboutUsText6")</p>
+                    <p>@Model.Value("aboutUsText7")</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="review">
+	<div class="container">
+		<div class="review-content">
+			<p class="label-title">@Model.Value("reviewTitle")</p>
+			<h1 class="standard-heading">@Model.Value("reviewHeadline")</h1>
+			<p class="review-text">@Model.Value("reviewText")</p>
+			<div class="flex">
+				<i class="fa-solid fa-star-sharp"></i>
+				<i class="fa-solid fa-star-sharp"></i>
+				<i class="fa-solid fa-star-sharp"></i>
+				<i class="fa-solid fa-star-sharp"></i>
+				<i class="fa-solid fa-star-sharp"></i>
+			</div>
+			<p class="standard-text">@Model.Value("reviewName")</p>
+			<p class="standard-text text-xl">@Model.Value("reviewName2")</p>
+		</div>
+		<img src="@reviewImage?.Url()" alt="@Model.Value("reviewImageAlt")">
+	</div>
+</section>
+
+ <section class="team">
+    <div class="container">
+        <div class="text-center">
+            <p class="label-title">@Model.Value("teamTitle")</p>
+            <h1 class="standard-heading">@Model.Value("teamTitle")</h1>
+        </div>
+        <div class="team-grid1">
+            <div class="team-card">
+                <img src="@teamImage1?.Url()" alt="@Model.Value("teamCard1ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard1Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard1Text")</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="@teamImage2?.Url()" alt="@Model.Value("teamCard2ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard2Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard2Text")</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="@teamImage3?.Url()" alt="@Model.Value("teamCard3ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard3Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard3Text")</p>
+                </div>
+            </div>
+        </div>
+        <div class="team-grid2">
+                <div class="team-card">
+                <img src="@teamImage4?.Url()" alt="@Model.Value("teamCard4ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard4Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard4Text")</p>
+                </div>
+            </div>
+                <div class="team-card">
+                <img src="@teamImage5?.Url()" alt="@Model.Value("teamCard5ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard5Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard5Text")</p>
+                </div>
+            </div>
+                <div class="team-card">
+                <img src="@teamImage6?.Url()" alt="@Model.Value("teamCard6ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard6Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard6Text")</p>
+                </div>
+            </div>
+                <div class="team-card">
+                <img src="@teamImage7?.Url()" alt="@Model.Value("teamCard7ImageAlt")">
+                <div class="team-card-text">
+                    <h3 class="standard-heading ">@Model.Value("teamCard7Headline")</h3>
+                    <p class="text-13">@Model.Value("teamCard7Text")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="next-project">
+    <div class="container flex">
+        <img class="guy-glasses" src="@teamImageFront?.Url()" alt="@Model.Value("nextProjectImageAlt")">
+        <img src="@teamImageBehind?.Url()" alt="@Model.Value("nextProjectImageBehindAlt")">
+        <div class="next-project-text">
+            <h1 class="standard-heading">@Model.Value("nextProjectHeadline")</h1>
+            <div class="flex">
+                <i class="fa-light fa-location-dot"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText")</p>
+                <div class="flex">
+                <i class="fa-light fa-phone-flip"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline2")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText2")</p>
+                <div class="flex">
+                <i class="fa-light fa-envelope"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline3")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText3")</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

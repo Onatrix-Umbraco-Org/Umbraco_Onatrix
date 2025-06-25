@@ -1,0 +1,46 @@
+.contact-next-project {
+    background-color: #ffffff !important;
+}
+
+.map-wrap {
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.map {
+    position: relative;
+    z-index: 1;
+}
+
+    
+
+
+.contact-call-back {
+    position: absolute;
+    z-index: 5;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    
+    
+
+    .text-center {
+        padding: 4rem 24rem 0 24rem;
+
+        .standard-heading {
+            padding: 0.5rem 0 2rem 0;
+        }
+    }
+
+    .flex {
+        gap: 1rem;
+        padding: 0 3rem 0 3rem;
+    }
+
+    .theme-btn {
+        display: block;
+        margin: 2rem auto 4rem auto;
+    }
+}

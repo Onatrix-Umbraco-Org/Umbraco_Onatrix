@@ -1,0 +1,198 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var showcaseImage = Model?.Value<IPublishedContent>("heroBackgroundImage");
+
+    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage");
+
+    var serviceImage1 = Model?.Value<IPublishedContent>("serviceCard1Image");
+    var serviceImage2 = Model?.Value<IPublishedContent>("serviceCard2Image");
+    var serviceImage3 = Model?.Value<IPublishedContent>("serviceCard3Image");
+    var serviceImage4 = Model?.Value<IPublishedContent>("serviceCard4Image");
+    var serviceImage5 = Model?.Value<IPublishedContent>("serviceCard5Image");
+    var serviceImage6 = Model?.Value<IPublishedContent>("serviceCard6Image");
+
+    var trustImage = Model?.Value<IPublishedContent>("trustBackgroundImage");
+    var trustImageBackground = Model?.Value<IPublishedContent>("trustBackgroundImageBehind");
+
+    var successImage = Model?.Value<IPublishedContent>("successBackgroundImage");
+    var successImageBehind = Model?.Value<IPublishedContent>("successBackgroundImageBehind");
+
+    var recentProjectImage1 = Model?.Value<IPublishedContent>("recentProjectCard1Image");
+    var recentProjectImage2 = Model?.Value<IPublishedContent>("recentProjectCard2Image");
+    var recentProjectImage3 = Model?.Value<IPublishedContent>("recentProjectCard3Image");
+    var recentProjectImage4 = Model?.Value<IPublishedContent>("recentProjectCard4Image");
+
+    var companyLogoImage1 = Model?.Value<IPublishedContent>("recentProjectCompany1");
+    var companyLogoImage2 = Model?.Value<IPublishedContent>("recentProjectCompany2Image");
+    var companyLogoImage3 = Model?.Value<IPublishedContent>("recentProjectCompany3Image");
+    var companyLogoImage4 = Model?.Value<IPublishedContent>("recentProjectCompany4Image");
+    var companyLogoImage5 = Model?.Value<IPublishedContent>("recentProjectCompany5Image");
+    var companyLogoImage6 = Model?.Value<IPublishedContent>("recentProjectCompany6Image");
+}
+
+<section class="showcase">
+    <div class="showcase-wrapper">
+       <img src="@showcaseImage?.Url()" alt="showcase background image">
+        <div class="container showcase-text">
+            <h1 id="showcase-headline">@Model?.Value("heroHeadline")</h1>
+            <p class="standard-text text-m">@Model?.Value("heroText")</p>
+            <a class="theme-btn" href="@Model?.Value("heroBtnUrl")">@Model?.Value("heroBtnText")</a>
+        </div>
+    </div>
+</section>
+
+ <section class="about-us">
+    <div class="container">
+        <div class=" about-info">
+            <p class="label-title">@Model.Value("aboutSectionTitle")</p>
+            <h1 class="standard-heading">@Model.Value("aboutUsHeadline")</h1>
+            <p class="text-xl">@Model.Value("aboutUsQuote")</p>
+            <p class="standard-text">@Model.Value("aboutUsText")</p>
+            <img src="@signatureImage?.Url()" alt="@Model.Value("aboutSignature")">
+            <p class="standard-text">@Model.Value("aboutSignature")</p>
+        </div>
+        <div class="request-call-back">
+            <h2 class="standard-heading">@Model.Value("aboutCallHeadline")</h2>
+            <div class="call-back-box">
+                <p class="standard-text text-13">@Model.Value("aboutCallText")</p>
+                <input type="text" class="form" placeholder="@Model.Value("aboutCallFormName")" name="name">
+                <input type="text" class="form" placeholder="@Model.Value("aboutCallFormEmail")" name="email">
+                <input type="text" class="form" placeholder="@Model.Value("aboutCallFormPhone")" name="phone">
+                <div type="text" class="form-last" placeholder="" name="sector">@Model.Value("aboutCallFormJob")<i class="fa-solid fa-angle-down"></i></div>
+                <button class="theme-btn" type="submit">@Model.Value("aboutCallBtnText")</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-service-wrapper">
+    <div class="container">
+        <div class="text-center">
+            <p class="label-title">@Model.Value("serviceLabel")</p>
+            <h1 class="standard-heading">@Model.Value("serviceHeadline")</h1>
+        </div>
+        <div class="grid-services">
+            <a href="@Model.Value("serviceCard1Url")" class="grid-card">
+                <h3 class="standard-heading">@Model.Value("serviceCard1Headline")</h3>
+                <img src="@serviceImage1?.Url()" alt="@Model.Value("serviceCard1ImageAlt")">
+                <p class="standard-text">@Model.Value("serviceCard1Text")</p>
+            </a>
+            <div class="grid-card">
+                <h3 class="standard-heading">@Model.Value("serviceCard2Headline")</h3>
+                <img src="@serviceImage2?.Url()" alt="@Model.Value("serviceCard2ImageAlt")">
+                <p class="standard-text">@Model.Value("serviceCard2Text")</p>
+            </div>
+            <div class="grid-card">
+                <h3 class="standard-heading">@Model.Value("serviceCard3Headline")</h3>
+                <img src="@serviceImage3?.Url()" alt="@Model.Value("serviceCard3ImageAlt")">
+                <p class="standard-text">@Model.Value("serviceCard3Text")</p>
+            </div>
+            <div class="grid-card">
+                <h3 class="standard-heading">@Model.Value("serviceCard4Headline")</h3>
+                <img src="@serviceImage4?.Url()" alt="@Model.Value("serviceCard4ImageAlt")">
+                <p class="standard-text">@Model.Value("serviceCard4Text")</p>
+            </div>
+            <div class="grid-card">
+                <h3 class="standard-heading">@Model.Value("serviceCard5Headline")</h3>
+                <img src="@serviceImage5?.Url()" alt="@Model.Value("serviceCard5ImageAlt")">
+                <p class="standard-text">@Model.Value("serviceCard5Text")</p>
+            </div>
+            <div class="grid-card">
+                <h3 class="standard-heading">@Model.Value("serviceCard6Headline")</h3>
+                <img src="@serviceImage6?.Url()" alt="@Model.Value("serviceCard6ImageAlt")">
+                <p class="standard-text">@Model.Value("serviceCard6Text")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="trust">
+    <div class="container text-center">
+        <h1 class="standard-heading">@Model.Value("trustHeadline1")</h1>
+        <h1 class="label-title">@Model.Value("trustHeadline2")</h1>
+        <p class="standard-text text-m">@Model.Value("trustText")</p>
+        <button class="theme-btn">@Model.Value("trustBtnText")</button>
+        <img id="dot-map-round" src="@trustImageBackground?.Url()" alt="@Model.Value("trustBackgroundImageAlt")">
+        <img id="group-photo" src="@trustImage?.Url()" alt="@Model.Value("trustBackgroundImageBehindAlt")">
+    </div>
+</section>
+
+ <section class="success-wrapper">
+    <div class="container">
+        <div class="text-center">
+            <img id="dot-map-flat" src="@successImageBehind?.Url()" alt="@Model.Value("successBackgroundImageBehindAlt")">
+            <p class="label-title">@Model.Value("successTitle")</p>
+            <h2 class="standard-heading">@Model.Value("successHeadline")</h2>
+        </div>
+        <div class="grid-services text-center">
+            <div class="story-card">
+                <p class="label-title">@Model.Value("successCard1Headline")</p>
+                <p class="standard-text text-l">@Model.Value("successCard1Text")</p>
+            </div>
+                <div class="story-card">
+                <p class="label-title">@Model.Value("successCard2Headline")</p>
+                <p class="standard-text text-l">@Model.Value("successCard2Text")</p>
+            </div>
+                <div class="story-card">
+                <p class="label-title">@Model.Value("successCard3Headline")</p>
+                <p class="standard-text text-l">@Model.Value("successCard3Text")</p>
+            </div>
+        </div>
+        <img id="success-pic" src="@successImage?.Url()" alt="@Model.Value("successBackgroundImageAlt")">
+    </div>
+</section>
+
+<section class="recent-projects">
+    <div class="container">
+        <p class="label-title">@Model.Value("recentProjectTitle")</p>
+        <h1 class="standard-heading">@Model.Value("recentProjectHeadline")</h1>
+    </div>
+    <div class="grid-projects">
+        <a href="@Model.Value("recentProjectCard1ImageUrl")" class="projects-card">
+            <img src="@recentProjectImage1?.Url()" alt="@Model.Value("recentProjectCard1ImageAlt")">
+            <div class="project-overlay">
+                <h4 class="standard-heading text-l">@Model.Value("recentProjectCard1Headline")</h4>
+                <p class="standard-text">@Model.Value("recentProjectCard1Text")</p>
+            </div>
+        </a>
+        <div class="projects-card">
+            <img src="@recentProjectImage2?.Url()" alt="@Model.Value("recentProjectCard2ImageAlt")">
+            <div class="project-overlay-active flex">
+                <div>
+                    <h4 class="standard-heading text-l">@Model.Value("recentProjectCard2Headline")</h4>
+                    <p class="standard-text">@Model.Value("recentProjectCard2Text")</p>
+                </div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div class="projects-card">
+            <img src="@recentProjectImage3?.Url()" alt="@Model.Value("recentProjectCard3ImageAlt")">
+            <div class="project-overlay">
+                <h4 class="standard-heading text-l">@Model.Value("recentProjectCard3Headline")</h4>
+                <p class="standard-text">@Model.Value("recentProjectCard3Text")</p>
+            </div>
+        </div>
+        <div class="projects-card">
+            <img src="@recentProjectImage4?.Url()" alt="@Model.Value("recentProjectCard4ImageAlt")">
+            <div class="project-overlay">
+                <h4 class="standard-heading text-l">@Model.Value("recentProjectCard4Headline")</h4>
+                <p class="standard-text">@Model.Value("recentProjectCard4Text")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="container company-grid">
+        <img src="@companyLogoImage1?.Url()" alt="@Model.Value("recentProjectCompanyLogoAlt")">
+        <img src="@companyLogoImage2?.Url()" alt="@Model.Value("recentProjectCompanyLogoAlt")">
+        <img src="@companyLogoImage3?.Url()" alt="@Model.Value("recentProjectCompanyLogoAlt")">
+        <img src="@companyLogoImage4?.Url()" alt="@Model.Value("recentProjectCompanyLogoAlt")">
+        <img src="@companyLogoImage5?.Url()" alt="@Model.Value("recentProjectCompanyLogoAlt")">
+        <img src="@companyLogoImage6?.Url()" alt="@Model.Value("recentProjectCompanyLogoAlt")">
+</section>
+
+
+

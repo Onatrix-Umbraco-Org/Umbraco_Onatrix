@@ -1,0 +1,53 @@
+.risk-management .container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.risk-management .container .risk-management-content {
+  display: flex;
+}
+.risk-management .container .risk-management-content .content-left {
+  padding-right: 3rem;
+}
+.risk-management .container .risk-management-content .content-left img {
+  padding-top: 1.5rem;
+}
+.risk-management .container .risk-management-content .content-left .standard-text {
+  padding: 1rem 0 2rem 0;
+  max-width: 301px;
+}
+.risk-management .container .risk-management-content .content-left .standard-heading {
+  font-size: 22px;
+}
+.risk-management .container .risk-management-content .content-right {
+  padding-left: 3rem;
+  border-left: 1px solid #ececec;
+  padding-bottom: 3rem;
+}
+.risk-management .container .risk-management-content .content-right .standard-heading {
+  padding-top: 1.5rem;
+}
+.risk-management .container .risk-management-content .content-right p {
+  padding-top: 1rem;
+}
+.risk-management .container .risk-management-content .content-right img {
+  width: 100%;
+}
+.risk-management .container .risk-management-content .content-right .key-point-flex {
+  display: flex;
+  gap: 0.5rem;
+}
+.risk-management .container .risk-management-content .content-right .key-point-flex i {
+  font-size: 0.5rem;
+  color: #D9C3A9;
+  margin-top: 1.4rem;
+}
+.risk-management .container .risk-management-content .content-right #risk-pic2 {
+  padding-top: 1.5rem;
+}
+.risk-management .container .flex {
+  gap: 2rem;
+}
+.risk-management .container #text-area {
+  height: 10rem;
+  margin-bottom: 1rem;
+}

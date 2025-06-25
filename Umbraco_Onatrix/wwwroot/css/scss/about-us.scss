@@ -1,0 +1,152 @@
+.company-info {
+   
+    .container {
+        padding: 8rem 0 10rem 0;
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5rem;
+
+            .info-left {
+
+                .text-m {
+                    padding-top: 0.5rem;
+                }
+            }
+
+            .info-right {
+            
+                .text-xl {
+                    font-weight: 300;
+                }
+
+                .text-s {
+                
+                    p {
+                        padding-top: 1.85rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.review {
+    background-color: #F7F7F7;
+    
+    position: relative;
+
+    .container {
+       position: relative;
+       padding: 4.85rem 0 4.85rem 0;
+
+        .review-content {
+            max-width: 45%;
+
+            .standard-heading {
+                padding-right: 8rem;
+            }
+
+            .review-text {
+                font-size: 20px;
+                color: #999999;
+                padding-top: 2rem;
+                padding-bottom: 1rem;
+            }
+
+            .flex {
+                color: #333333;
+                gap: 0.25rem;
+                padding-bottom: 2rem;
+            }
+
+            .standard-text {
+                color: #2D303A;
+            }
+
+            .text-xl {
+                padding-top: 0.25rem;
+            }
+        }
+
+         img {
+            position: absolute;
+            top: 0;
+            right: -22.75%;
+        }
+    }
+}
+
+.team {
+
+    .container {
+        padding: 5rem 0 5rem 0;
+
+        .text-center {
+
+            h1 {
+                padding: 0 30% 0 30%;
+            }
+        }
+
+        .team-grid1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0 4rem 0;
+
+            .team-card {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .team-card-text {
+                    padding: 1rem 0 1rem 1rem;
+
+                    .standard-heading {
+                        font-size: 22px;
+                        font-weight: 600;
+                        padding-bottom: 0.25rem;
+                    }
+
+                    .text-13 {
+                        color: #9C9EA6;
+                    }
+                }
+            }
+        }
+
+        .team-grid2 {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 2rem;
+
+            .team-card {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+                
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .team-card-text {
+                    padding: 1rem 0 1rem 1rem;
+
+                    .standard-heading {
+                        font-size: 22px;
+                        font-weight: 600;
+                        padding-bottom: 0.25rem;
+                    }
+
+                    .text-13 {
+                        color: #9C9EA6;
+                    }
+                }
+            }
+        }
+    }
+}

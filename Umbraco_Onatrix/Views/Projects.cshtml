@@ -1,0 +1,147 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	var projectImage1 = Model?.Value<IPublishedContent>("projectCard1Image");
+    var projectImage2 = Model?.Value<IPublishedContent>("projectCard2Image");
+	var projectImage3 = Model?.Value<IPublishedContent>("projectCard3Image");
+    var projectImage4 = Model?.Value<IPublishedContent>("projectCard4Image");
+
+	var teamImageFront = Model?.Value<IPublishedContent>("nextProjectImage");
+    var teamImageBehind = Model?.Value<IPublishedContent>("nextProjectImageBehind");
+
+}
+
+<section class="tab-location">
+	<div class="container text-center">
+		<h1 class="standard-heading">@Model.Value("projectsTabHeadline")</h1>
+		<div class="flex">
+			<p class="standard-text">@Model.Value("projectsTabText1")</p>
+			<i class="fa-solid fa-angle-right"></i>
+			<p class="label-title">@Model.Value("projectsTabText2")</p>
+		</div>
+	</div>
+</section>
+
+<section class="projects">
+	<div class="container">
+		<div class="project-grid">
+			<div class="content-left">
+				<div class="project-card">
+					<img src="@projectImage1?.Url()" alt="@Model.Value("projectCard1ImageAlt")">
+					<div>
+						<h4 class="project-heading">@Model.Value("projectCard1Headline")</h4>
+						<div class="date">
+							<i class="fa-regular fa-calendar-days"></i>
+							<p>@Model.Value("projectCard1Date")</p>
+						</div>
+						<p class="standard-text">@Model.Value("projectCard1Text")</p>
+						<a class="flex" href="@Model.Value("projectCard1LinkUrl")">
+							<p class="text-s">@Model.Value("projectCard1LinkText")</p>
+							<i class="fa-solid fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<img src="@projectImage2?.Url()" alt="@Model.Value("projectCard2ImageAlt")">
+					<div>
+						<h4 class="project-heading">@Model.Value("projectCard2Headline")</h4>
+						<div class="date">
+							<i class="fa-regular fa-calendar-days"></i>
+							<p>@Model.Value("projectCard2Date")</p>
+						</div>
+						<p class="standard-text">@Model.Value("projectCard2Text")</p>
+						<div class="flex">
+							<p class="text-s">@Model.Value("projectCard1LinkText")</p>
+							<i class="fa-solid fa-arrow-right"></i>
+						</div>
+					</div>
+				</div>
+				<div class="project-card">
+					<img src="@projectImage3?.Url()" alt="@Model.Value("projectCard3ImageAlt")">
+					<div>
+						<h4 class="project-heading">@Model.Value("projectCard3Headline")</h4>
+						<div class="date">
+							<i class="fa-regular fa-calendar-days"></i>
+							<p>@Model.Value("projectCard3Date")</p>
+						</div>
+						<p class="standard-text">@Model.Value("projectCard3Text")</p>
+						<div class="flex">
+							<p class="text-s">@Model.Value("projectCard1LinkText")</p>
+							<i class="fa-solid fa-arrow-right"></i>
+						</div>
+					</div>
+				</div>
+				<div class="project-card project-card-last">
+					<img src="@projectImage4?.Url()" alt="@Model.Value("projectCard4ImageAlt")">
+					<div>
+						<h4 class="project-heading">@Model.Value("projectCard4Headline")</h4>
+						<div class="date">
+							<i class="fa-regular fa-calendar-days"></i>
+							<p>@Model.Value("projectCard4Date")</p>
+						</div>
+						<p class="standard-text">@Model.Value("projectCard4Text")</p>
+						<div class="flex">
+							<p class="text-s">@Model.Value("projectCard1LinkText")</p>
+							<i class="fa-solid fa-arrow-right"></i>
+						</div>
+					</div>
+				</div>
+				<div class="change-page">
+					<p class="change-page-text text-l">@Model.Value("servicesTabChangeText1")</p>
+					<p class="change-page-number active">@Model.Value("servicesTabChangeText2")</p>
+					<p class="change-page-number">@Model.Value("servicesTabChangeText3")</p>
+					<p class="change-page-text">@Model.Value("servicesTabChangeText4")</p>
+				</div>
+			</div>
+			<div class="content-right">
+				<h4 class="project-heading">@Model.Value("tagHeadline")</h4>
+				<div class="tags">
+					<p>@Model.Value("tagText1")</p>
+					<p>@Model.Value("tagText2")</p>
+					<p>@Model.Value("tagText3")</p>
+					<p>@Model.Value("tagText4")</p>
+					<p>@Model.Value("tagText5")</p>
+					<p>@Model.Value("tagText6")</p>
+					<p>@Model.Value("tagText7")</p>
+					<p>@Model.Value("tagText8")</p>
+				</div>
+				<div class="content-left-help">
+					<h3 class="standard-heading">@Model.Value("helpHeadline")</h3>
+					<p class="standard-text">@Model.Value("helpText")</p>
+					<div class="content-left-help-form">
+						<input type="email" class="form-last" placeholder="@Model.Value("helpFormText")" name="sector">
+						<i class="fa-regular fa-envelope"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="next-project">
+    <div class="container flex">
+        <img class="guy-glasses" src="@teamImageFront?.Url()" alt="@Model.Value("nextProjectImageAlt")">
+        <img src="@teamImageBehind?.Url()" alt="@Model.Value("nextProjectImageBehindAlt")">
+        <div class="next-project-text">
+            <h1 class="standard-heading">@Model.Value("nextProjectHeadline")</h1>
+            <div class="flex">
+                <i class="fa-light fa-location-dot"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText")</p>
+                <div class="flex">
+                <i class="fa-light fa-phone-flip"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline2")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText2")</p>
+                <div class="flex">
+                <i class="fa-light fa-envelope"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline3")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText3")</p>
+        </div>
+    </div>
+</section>
+

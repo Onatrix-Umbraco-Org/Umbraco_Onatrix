@@ -1,0 +1,112 @@
+.project-juva-inc {
+
+    .container {
+        padding-bottom: 5rem;
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding-top: 4rem;
+
+            .content-left {
+                padding-right: 5rem;
+                border-right: 1px solid #ececec;
+
+                .date {
+                    display: flex;
+                    align-items: center;
+                    color: #9C9EA6;
+                    gap: 0.5rem;
+
+                    i {
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .text-s {
+                    font-weight: 700;
+                    padding-top: 1.5rem;
+                }
+
+                img {
+                    width: 100%;
+                    padding-top: 1rem;
+                }
+
+                .standard-heading {
+                    padding-top: 1.5rem;
+                    font-size: 18px;
+                }
+
+                .key-point-flex {
+                    display: flex;
+                    gap: 0.5rem;
+
+                    i {
+                        font-size: 0.5rem;
+                        color: #5D8C87;
+                        margin-top: 1.35rem;
+                    }
+
+                    p {
+                        padding-top: 1rem;
+                    }
+                }
+
+                .standard-text {
+                    padding-top: 1rem;
+                }
+
+                .flex {
+                    gap: 2rem;
+                }
+
+                .report-tags {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    padding-top: 4rem;
+
+                    .text-m {
+                        color: #4F5955;
+                        font-weight: 600;
+                    }
+
+                    .juva-tags {
+                        display: flex;
+                        gap: 0.75rem;
+
+                        p {
+                            padding: 0.4rem 1rem;
+                            border: 1px solid #F2EDDC;
+                            border-radius: 3rem;
+                            background-color: #F2EDDC;
+                            font-size: 13px;
+                            color: #4F5955;
+                        }
+                    }      
+                }
+            }
+
+            .content-right {
+                width: 21rem;
+                padding-left: 2.25rem;
+
+                .tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.75rem;
+                    padding-top: 1rem;
+                    padding-bottom: 2rem;
+
+                    p {
+                        padding: 0.8rem 1.25rem;
+                        border: 1px solid #e6e6e6;
+                        border-radius: 3rem;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

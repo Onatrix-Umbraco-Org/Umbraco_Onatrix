@@ -1,0 +1,135 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var aboutUsImage = Model?.Value<IPublishedContent>("riskManagementContentLeftImage");
+    var riskManagementImage1 = Model?.Value<IPublishedContent>("riskManagementContentRightImage1");
+    var riskManagementImage2 = Model?.Value<IPublishedContent>("riskManagementContentRightImage2");
+
+    var teamImageFront = Model?.Value<IPublishedContent>("nextProjectImage");
+    var teamImageBehind = Model?.Value<IPublishedContent>("nextProjectImageBehind");
+}
+
+<section class="tab-location">
+	<div class="container text-center">
+			<h1 class="standard-heading">@Model.Value("riskManagementTabHeadline")</h1>
+			<div class="flex">
+				<p class="standard-text">@Model.Value("riskManagementTabText1")</p>
+				<i class="fa-solid fa-angle-right"></i>
+				<p class="standard-text">@Model.Value("riskManagementTabText2")</p>
+                <i class="fa-solid fa-angle-right"></i>
+				<p class="label-title">@Model.Value("riskManagementTabText3")</p>
+			</div>
+	</div>
+</section>
+
+<section>
+    <div class="risk-management">
+        <div class="container">
+            <div class="risk-management-content">
+                <div class="content-left">
+                    <h3 class="standard-heading text-">@Model.Value("riskManagementContentLeftHeadline1")</h3>
+                    <img src="@aboutUsImage?.Url()" alt="@Model.Value("riskManagementContentLeftImageAlt")">
+                    <p class="standard-text">@Model.Value("riskManagementContentLeftText")</p>
+                    <div class="content-left-help">
+                        <h3 class="standard-heading">@Model.Value("riskManagementContentLeftHeadline2")</h3>
+                        <p class="standard-text">@Model.Value("riskManagementContentLeftText2")</p>
+                        <div class="content-left-help-form">
+                            <input type="email" class="form-last" placeholder="@Model.Value("riskManagementContentLeftFormText")" name="sector">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right standard-text">
+                    <img src="@riskManagementImage1?.Url()" alt="@Model.Value("riskManagementContentRightImage1Alt")">
+                    <h3 class="standard-heading">@Model.Value("riskManagementContentRightHeadline1")</h3>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightKeyNoteText1")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightKeyNoteText2")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightKeyNoteText3")</p>
+                    </div>
+                    <h3 class="standard-heading">@Model.Value("riskManagementContentRightHeadline2")</h3>
+                    <p>@Model.Value("riskManagementContentRightHeadline2Text1")</p>
+                    <p>@Model.Value("riskManagementContentRightHeadline2Text2")</p>
+                    <p>@Model.Value("riskManagementContentRightHeadline2Text3")</p>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline2KeyNote1")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline2KeyNote2")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline2KeyNote3")</p>
+                    </div>
+                    <p>@Model.Value("riskManagementContentRightHeadline2Text4")</p>
+                    <p>@Model.Value("riskManagementContentRightHeadline2Text5")</p>
+                    <img id="risk-pic2" src="@riskManagementImage2?.Url()" alt="@Model.Value("riskManagementContentRightImage2Alt")">
+                    <h3 class="standard-heading">@Model.Value("riskManagementContentRightHeadline3")</h3>
+                    <p>@Model.Value("riskManagementContentRightHeadline3Text1")</p>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline3KeyNote1")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline3KeyNote2")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline3KeyNote3")</p>
+                    </div>
+                    <div class="key-point-flex">
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@Model.Value("riskManagementContentRightHeadline3KeyNote4")</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <h3 class="standard-heading">@Model.Value("questionHeadline")</h3>
+                <div class="flex">
+                    <input type="text" class="form" placeholder="@Model.Value("questionFormText1")" name="name">
+                    <input type="email" class="form" placeholder="@Model.Value("questionFormText2")" name="email">
+                </div>
+                <textarea id="text-area" type="text" class="form" placeholder="@Model.Value("questionFormText3")" name="email"></textarea>
+                <button class="theme-btn">@Model.Value("questionBtnText")</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="next-project">
+    <div class="container flex">
+        <img class="guy-glasses" src="@teamImageFront?.Url()" alt="@Model.Value("nextProjectImageAlt")">
+        <img src="@teamImageBehind?.Url()" alt="@Model.Value("nextProjectImageBehindAlt")">
+        <div class="next-project-text">
+            <h1 class="standard-heading">@Model.Value("nextProjectHeadline")</h1>
+            <div class="flex">
+                <i class="fa-light fa-location-dot"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText")</p>
+                <div class="flex">
+                <i class="fa-light fa-phone-flip"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline2")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText2")</p>
+                <div class="flex">
+                <i class="fa-light fa-envelope"></i>
+                <p class="standard-text">@Model.Value("nextProjectTextHeadline3")</p>
+            </div>
+            <p class="standard-text text-s">@Model.Value("nextProjectText3")</p>
+        </div>
+    </div>
+</section>
+
