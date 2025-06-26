@@ -28,7 +28,7 @@ jobs:
         run: dotnet build Umbraco_Onatrix/Umbraco_Onatrix.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish Umbraco_Onatrix/Umbraco_Onatrix.csproj -c Release -o ./publish
+        run: dotnet publish Umbraco_Onatrix/Umbraco_Onatrix.csproj -c Release -o ./publish -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-          path: ./publish
+          path: ./app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -53,8 +53,5 @@ jobs:
         with:
           app-name: 'Onatrix-Umbraco-CMS'
           slot-name: 'Production'
-          package: ./publish
+          package: ./app
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-
-
-
