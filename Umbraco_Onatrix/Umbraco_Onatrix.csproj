@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Content Include="wwwroot\media\**\*.*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
 
