@@ -36,22 +36,22 @@ jobs:
           name: .net-app
           path: ./publish
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
+ deploy:
+  runs-on: windows-latest
+  needs: build
 
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: .net-app
-          path: ./app
+  steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v4
+      with:
+        name: .net-app
+        path: ./
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'Onatrix-Umbraco-CMS'
-          slot-name: 'Production'
-          package: ./app
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: 'Onatrix-Umbraco-CMS'
+        slot-name: 'Production'
+        package: ./publish.zip
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
