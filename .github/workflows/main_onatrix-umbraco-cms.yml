@@ -30,28 +30,31 @@ jobs:
       - name: dotnet publish
         run: dotnet publish Umbraco_Onatrix/Umbraco_Onatrix.csproj -c Release -o ./publish
 
+      - name: Zip publish folder
+        run: Compress-Archive -Path ./publish/* -DestinationPath ./publish.zip
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ./publish
+          path: ./publish.zip
 
- deploy:
-  runs-on: windows-latest
-  needs: build
+  deploy:
+    runs-on: windows-latest
+    needs: build
 
-  steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v4
-      with:
-        name: .net-app
-        path: ./
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: .net-app
+          path: ./
 
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: 'Onatrix-Umbraco-CMS'
-        slot-name: 'Production'
-        package: ./publish.zip
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'Onatrix-Umbraco-CMS'
+          slot-name: 'Production'
+          package: ./publish.zip
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
